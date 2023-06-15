@@ -7,9 +7,22 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
       sx={{
         width: '100vw',
         height: '100vh',
+        overflowX: 'hidden',
+        bgcolor: 'secondary.light',
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: 'secondary.dark',
+          border: `5px solid white`,
+          borderColor: `secondary.light`,
+          borderRadius: '30px',
+        },
+        '&::-webkit-scrollbar': {
+          width: '16px',
+        },
       }}
     >
-      <Container sx={{ border: '1px solid red' }}>{children}</Container>
+      <Container maxWidth="sm" disableGutters sx={{ px: '20px' }}>
+        {children}
+      </Container>
     </Box>
   );
 };
