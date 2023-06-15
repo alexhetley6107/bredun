@@ -1,14 +1,14 @@
 import { Layout } from '@/shared/ui';
-import { Home, SideMenu } from '@/widgets';
+import { Projects, SideMenu } from '@/widgets';
 import { NextPage } from 'next';
 
-const HomePage: NextPage = () => {
+const ProjectsPage: NextPage = () => {
   return (
     <Layout>
-      <Home />
+      <Projects />
       <SideMenu />
     </Layout>
   );
 };
 
-export default HomePage;
+export default ProjectsPage;
