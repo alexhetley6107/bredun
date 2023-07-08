@@ -1,13 +1,11 @@
-import React, { FC, PropsWithChildren, useEffect } from 'react';
+import React, { FC, PropsWithChildren, useState, useEffect } from 'react';
 import { ColorModeContext } from '@/shared/lib';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
-  const toggleColorMode = () => {
-    setMode(mode === 'light' ? 'dark' : 'light');
-  };
+  const toggleColorMode = () => setMode(mode === 'light' ? 'dark' : 'light');
 
   useEffect(() => {
     const savedMode = localStorage.getItem('themeMode');
@@ -17,7 +15,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('themeMode', mode);
+    localStorage.setItem('themeMode', mode as string);
   }, [mode]);
 
   const theme = React.useMemo(
