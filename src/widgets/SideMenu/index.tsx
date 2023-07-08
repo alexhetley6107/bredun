@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import LanguageIcon from '@mui/icons-material/Language';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useToggleColorMode } from '@/shared/lib';
+import { useTranslate } from '@/shared/hooks';
 
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
@@ -16,6 +17,7 @@ const links = ['main', 'projects', 'contacts'];
 const iconStyles = { mt: '5px', width: '35px', height: '35px', color: 'secondary.dark' };
 
 export const SideMenu: FC = () => {
+  const { t } = useTranslate();
   const { push } = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen((o) => !o);
@@ -48,7 +50,7 @@ export const SideMenu: FC = () => {
                     },
                   }}
                 >
-                  <Text>{link}</Text>
+                  <Text>{t(link)}</Text>
                 </ListItemButton>
               </ListItem>
             ))}
