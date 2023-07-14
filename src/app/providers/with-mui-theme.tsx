@@ -3,20 +3,23 @@ import { ColorModeContext } from '@/shared/lib';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
-
-  const toggleColorMode = () => setMode(mode === 'light' ? 'dark' : 'light');
+  const [mode, setMode] = useState<'light' | 'dark'>();
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('themeMode');
-    if (savedMode === 'dark' || savedMode === 'light') {
+    const savedMode = localStorage.getItem('themeMode') as 'light' | 'dark';
+
+    if (savedMode) {
       setMode(savedMode);
+    } else {
+      setMode('light');
     }
   }, []);
 
   useEffect(() => {
     localStorage.setItem('themeMode', mode as string);
   }, [mode]);
+
+  const toggleColorMode = () => setMode(mode === 'light' ? 'dark' : 'light');
 
   const theme = React.useMemo(
     () =>

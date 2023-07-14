@@ -2,8 +2,12 @@ import React, { FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Avatar, Text } from '@/shared/ui';
 import Link from 'next/link';
+// import { useRouter } from 'next/router';
 
 export const Home: FC = () => {
+  // const { locales } = useRouter();
+  // console.log('locales', locales);
+
   return (
     <Box>
       <Avatar />
