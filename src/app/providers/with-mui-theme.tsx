@@ -3,12 +3,12 @@ import { ColorModeContext } from '@/shared/lib';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const [mode, setMode] = useState<'light' | 'dark'>();
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
     const savedMode = localStorage.getItem('themeMode') as 'light' | 'dark';
 
-    if (savedMode) {
+    if (savedMode === 'light' || savedMode === 'dark') {
       setMode(savedMode);
     } else {
       setMode('light');
