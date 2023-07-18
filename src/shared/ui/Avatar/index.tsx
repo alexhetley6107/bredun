@@ -1,17 +1,28 @@
 import React from 'react';
-import { Avatar as MuiAvatar } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 
 export const Avatar = () => {
+  const isMobile = useMediaQuery('(max-width:450px)');
+
   return (
-    <MuiAvatar
-      src="./avatar.jpg"
+    <Box
       sx={{
-        height: '240px',
-        width: '240px',
+        height: isMobile ? '180px' : '240px',
+        width: isMobile ? '180px' : '240px',
         m: '30px auto',
+        borderRadius: '300px',
         bgcolor: 'primary.main',
-        img: {},
+        overflow: 'hidden',
       }}
-    />
+    >
+      <Box
+        component="img"
+        src="./avatar.jpg"
+        sx={{
+          width: '180%',
+          ml: '-30%',
+        }}
+      />
+    </Box>
   );
 };
