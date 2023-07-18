@@ -11,17 +11,24 @@ import {
   styled,
   useTheme,
 } from '@mui/material';
-import { Burger } from './Burger';
 import { useRouter } from 'next/router';
 import LanguageIcon from '@mui/icons-material/Language';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { useToggleColorMode } from '@/shared/lib';
 import { useTranslate } from '@/shared/hooks';
+import { Burger } from '@/features';
 
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
   fontSize: '32px',
   color: theme.palette.secondary.dark,
+}));
+
+const ListBtn = styled(ListItemButton)(({ theme }) => ({
+  transition: 'all 0.3s',
+  '&:hover p, &:hover svg': {
+    color: theme.palette.primary.main,
+  },
 }));
 
 const links = ['main', 'projects', 'contacts'];
@@ -39,6 +46,9 @@ export const SideMenu: FC = () => {
 
   const handleToggleLang = () => {
     const lang = window.localStorage.getItem('bredun_lang');
+    if (!lang) {
+      setLang('en');
+    }
     if (lang === 'en') {
       setLang('ru');
     } else {
@@ -47,10 +57,7 @@ export const SideMenu: FC = () => {
   };
 
   useEffect(() => {
-    const lang = window.localStorage.getItem('bredun_lang');
-    if (!lang) {
-      setLang('en');
-    }
+    handleToggleLang();
   }, []);
 
   return (
@@ -71,36 +78,36 @@ export const SideMenu: FC = () => {
           <List>
             {links.map((link, i) => (
               <ListItem key={i} onClick={() => push(i === 0 ? `/` : `/${link}`)} disablePadding>
-                <ListItemButton
-                  sx={{
-                    transition: 'all 0.3s',
-                    '&:hover p': {
-                      color: 'primary.main',
-                    },
-                  }}
+                <ListBtn
+                // sx={{
+                //   transition: 'all 0.3s',
+                //   '&:hover p': {
+                //     color: 'primary.main',
+                //   },
+                // }}
                 >
                   <Text>{t(link)}</Text>
-                </ListItemButton>
+                </ListBtn>
               </ListItem>
             ))}
           </List>
 
           <List>
             <ListItem disablePadding>
-              <ListItemButton onClick={toggleTheme}>
+              <ListBtn onClick={toggleTheme}>
                 <ListItemIcon>
                   <DarkModeIcon sx={iconStyles} />
                 </ListItemIcon>
                 <Text>{t(palette.mode)}</Text>
-              </ListItemButton>
+              </ListBtn>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton onClick={handleToggleLang}>
+              <ListBtn onClick={handleToggleLang}>
                 <ListItemIcon>
                   <LanguageIcon sx={iconStyles} />
                 </ListItemIcon>
                 <Text>{t('lang')}</Text>
-              </ListItemButton>
+              </ListBtn>
             </ListItem>
           </List>
         </Stack>
