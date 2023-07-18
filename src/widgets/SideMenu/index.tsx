@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import {
+  useMediaQuery,
   Box,
   Drawer,
   List,
@@ -38,6 +39,7 @@ export const SideMenu: FC = () => {
   const { t, setLang } = useTranslate();
   const { push } = useRouter();
   const { palette } = useTheme();
+  const isTablet = useMediaQuery('(max-width:650px)');
 
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen((o) => !o);
@@ -46,19 +48,13 @@ export const SideMenu: FC = () => {
 
   const handleToggleLang = () => {
     const lang = window.localStorage.getItem('bredun_lang');
-    if (!lang) {
-      setLang('en');
-    }
+
     if (lang === 'en') {
       setLang('ru');
     } else {
       setLang('en');
     }
   };
-
-  useEffect(() => {
-    handleToggleLang();
-  }, []);
 
   return (
     <Box>
@@ -71,7 +67,7 @@ export const SideMenu: FC = () => {
             width: '310px',
             height: '100%',
             bgcolor: 'secondary.light',
-            pt: '100px',
+            pt: isTablet ? '30px' : '100px',
             pb: '30px',
           }}
         >

@@ -1,28 +1,25 @@
 import React, { FC } from 'react';
 import { Box, Typography } from '@mui/material';
-import { Avatar, Text } from '@/shared/ui';
+import { Avatar, Text, Title } from '@/shared/ui';
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
+import { useTranslate } from '@/shared/hooks';
 
 export const Home: FC = () => {
-  // const { locales } = useRouter();
-  // console.log('locales', locales);
+  const { t } = useTranslate();
 
   return (
     <Box>
       <Avatar />
 
       <Text align="center" fontWeight={500} fontSize={40}>
-        Aleksandr Bredun
+        {t('name')}
       </Text>
-      <Text align="center" fontWeight={500} fontSize={50} lineHeight={'50px'} sx={{ color: 'primary.main' }}>
-        FrontEnd Developer
-      </Text>
+      <Title align="center">{t('fe_dev')}</Title>
 
       <Box sx={{ a: { textDecoration: 'none' } }}>
         <Link href="/contacts">
           <Text align="center" fontWeight={500} fontSize={20} lineHeight={'50px'} sx={{ color: 'primary.main' }}>
-            Contact Me
+            {t('contact_me')}
           </Text>
         </Link>
       </Box>

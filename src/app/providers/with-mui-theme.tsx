@@ -1,9 +1,11 @@
 import React, { FC, PropsWithChildren, useState, useEffect } from 'react';
 import { ColorModeContext } from '@/shared/lib';
 import { createTheme, CssBaseline, ThemeProvider as MUIThemeProvider } from '@mui/material';
+import { useTranslate } from '@/shared/hooks';
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const { setLang } = useTranslate();
 
   useEffect(() => {
     const savedMode = localStorage.getItem('themeMode') as 'light' | 'dark';
@@ -12,6 +14,15 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       setMode(savedMode);
     } else {
       setMode('light');
+    }
+  }, []);
+
+  useEffect(() => {
+    const lang = window.localStorage.getItem('bredun_lang');
+    if (lang) {
+      setLang(lang);
+    } else {
+      setLang('en');
     }
   }, []);
 
