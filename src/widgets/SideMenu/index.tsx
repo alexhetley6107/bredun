@@ -1,5 +1,16 @@
-import React, { FC, useState } from 'react';
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, Stack, Typography, styled } from '@mui/material';
+import React, { FC, useEffect, useState } from 'react';
+import {
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  Stack,
+  Typography,
+  styled,
+  useTheme,
+} from '@mui/material';
 import { Burger } from './Burger';
 import { useRouter } from 'next/router';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -17,12 +28,30 @@ const links = ['main', 'projects', 'contacts'];
 const iconStyles = { mt: '5px', width: '35px', height: '35px', color: 'secondary.dark' };
 
 export const SideMenu: FC = () => {
-  const { t } = useTranslate();
+  const { t, setLang } = useTranslate();
   const { push } = useRouter();
+  const { palette } = useTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen((o) => !o);
 
   const toggleTheme = useToggleColorMode();
+
+  const handleToggleLang = () => {
+    const lang = window.localStorage.getItem('bredun_lang');
+    if (lang === 'en') {
+      setLang('ru');
+    } else {
+      setLang('en');
+    }
+  };
+
+  useEffect(() => {
+    const lang = window.localStorage.getItem('bredun_lang');
+    if (!lang) {
+      setLang('en');
+    }
+  }, []);
 
   return (
     <Box>
@@ -62,15 +91,15 @@ export const SideMenu: FC = () => {
                 <ListItemIcon>
                   <DarkModeIcon sx={iconStyles} />
                 </ListItemIcon>
-                <Text>dark</Text>
+                <Text>{t(palette.mode)}</Text>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-              <ListItemButton>
+              <ListItemButton onClick={handleToggleLang}>
                 <ListItemIcon>
                   <LanguageIcon sx={iconStyles} />
                 </ListItemIcon>
-                <Text>english</Text>
+                <Text>{t('lang')}</Text>
               </ListItemButton>
             </ListItem>
           </List>
