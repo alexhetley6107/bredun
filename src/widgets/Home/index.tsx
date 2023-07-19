@@ -19,7 +19,8 @@ export const Home: FC = () => {
         {t('fe_dev')}
       </Title>
 
-      <Text>{t('greeting')}</Text>
+      <Text align="center">{t('greeting')}</Text>
+      <Text align="justify">{t('about_me')}</Text>
 
       <Box sx={{ a: { textDecoration: 'none' } }}>
         <Link href="/contacts">
@@ -29,7 +30,6 @@ export const Home: FC = () => {
         </Link>
       </Box>
 
-      <Text>{t('about_me')}</Text>
       <Text>{t('skills')}</Text>
       <Text>{t('experience')}</Text>
       <Text>{t('afterwords')}</Text>

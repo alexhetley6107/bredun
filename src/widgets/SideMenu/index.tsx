@@ -14,7 +14,7 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import LanguageIcon from '@mui/icons-material/Language';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Brightness6Icon from '@mui/icons-material/Brightness6';
 import { useToggleColorMode } from '@/shared/lib';
 import { useTranslate } from '@/shared/hooks';
 import { Burger } from '@/features';
@@ -74,14 +74,7 @@ export const SideMenu: FC = () => {
           <List>
             {links.map((link, i) => (
               <ListItem key={i} onClick={() => push(i === 0 ? `/` : `/${link}`)} disablePadding>
-                <ListBtn
-                // sx={{
-                //   transition: 'all 0.3s',
-                //   '&:hover p': {
-                //     color: 'primary.main',
-                //   },
-                // }}
-                >
+                <ListBtn>
                   <Text>{t(link)}</Text>
                 </ListBtn>
               </ListItem>
@@ -92,7 +85,7 @@ export const SideMenu: FC = () => {
             <ListItem disablePadding>
               <ListBtn onClick={toggleTheme}>
                 <ListItemIcon>
-                  <DarkModeIcon sx={iconStyles} />
+                  <Brightness6Icon sx={iconStyles} />
                 </ListItemIcon>
                 <Text>{t(palette.mode)}</Text>
               </ListBtn>

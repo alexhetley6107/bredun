@@ -8,14 +8,14 @@
 
   "name": "Aleksandr Bredun",
   "fe_dev": "FrontEnd Developer",
-  "greeting": "",
-  "about_me": "",
+  "greeting": "Hello, my name is Alex.",
+  "about_me": "I'm an experienced Frontend Developer, who is passionate about cutting-edge, pixel-perfect, beautiful interfaces and intuitively implemented UX. I develop web applications in React and not only.",
   "skills": "",
   "experience": "",
   "afterwords": "",
 
   "back_to_main": "Back to Main",
   "contact_me": "Contact Me",
-  "contact_by_links": "",
-  "download_cv": ""
+  "contact_by_links": "Contact me on one of the social networks",
+  "view_cv": "Check out my resume for more details"
 }
