@@ -5,8 +5,17 @@
   "light": "light",
   "dark": "dark",
   "lang": "english",
+
   "name": "Aleksandr Bredun",
   "fe_dev": "FrontEnd Developer",
+  "greeting": "",
+  "about_me": "",
+  "skills": "",
+  "experience": "",
+  "afterwords": "",
+
   "back_to_main": "Back to Main",
-  "contact_me": "Contact Me"
+  "contact_me": "Contact Me",
+  "contact_by_links": "",
+  "download_cv": ""
 }

@@ -9,7 +9,8 @@ export const Avatar = () => {
       sx={{
         height: isMobile ? '180px' : '240px',
         width: isMobile ? '180px' : '240px',
-        m: '30px auto',
+        m: '0 auto',
+        mt: '20px',
         borderRadius: '300px',
         bgcolor: 'primary.main',
         overflow: 'hidden',

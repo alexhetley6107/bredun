@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box } from '@mui/material';
-import { Avatar, Text, Title } from '@/shared/ui';
+import { Text, Title } from '@/shared/ui';
 import Link from 'next/link';
 import { useTranslate } from '@/shared/hooks';
 
@@ -16,10 +16,13 @@ export const Contacts: FC = () => {
           </Text>
         </Link>
       </Box>
-
       <Title>{t('contacts')}</Title>
 
-      <Avatar />
+      <Text>{t('contact_by_links')}</Text>
+      <Text>{t('download_cv')}</Text>
+
+      {/* //MAP
+       //AVATAR */}
     </Box>
   );
 };
