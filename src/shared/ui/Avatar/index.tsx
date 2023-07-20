@@ -2,13 +2,13 @@ import React from 'react';
 import { Box, useMediaQuery } from '@mui/material';
 
 export const Avatar = () => {
-  const isMobile = useMediaQuery('(max-width:450px)');
+  const isLaptop = useMediaQuery('(max-width:1280px)');
 
   return (
     <Box
       sx={{
-        height: isMobile ? '180px' : '240px',
-        width: isMobile ? '180px' : '240px',
+        height: isLaptop ? '180px' : '240px',
+        width: isLaptop ? '180px' : '240px',
         m: '0 auto',
         mt: '20px',
         borderRadius: '300px',

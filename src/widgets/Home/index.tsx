@@ -6,13 +6,13 @@ import { useTranslate } from '@/shared/hooks';
 
 export const Home: FC = () => {
   const { t } = useTranslate();
-  const isMobile = useMediaQuery('(max-width:450px)');
+  const isLaptop = useMediaQuery('(max-width:1280px)');
 
   return (
     <Box>
       <Avatar />
 
-      <Text align="center" fontWeight={500} fontSize={isMobile ? 26 : 40} lineHeight={isMobile ? '30px' : '50px'}>
+      <Text align="center" fontWeight={500} fontSize={isLaptop ? 26 : 40} lineHeight={isLaptop ? '30px' : '50px'}>
         {t('name')}
       </Text>
       <Title align="center" mt="10px">
@@ -33,18 +33,6 @@ export const Home: FC = () => {
       <Text>{t('skills')}</Text>
       <Text>{t('experience')}</Text>
       <Text>{t('afterwords')}</Text>
-
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
-      <Typography sx={{ fontSize: '70px' }}>HOME </Typography>
     </Box>
   );
 };

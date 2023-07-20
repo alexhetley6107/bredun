@@ -21,12 +21,12 @@ import { Burger } from '@/features';
 
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 500,
-  fontSize: '32px',
   color: theme.palette.secondary.dark,
 }));
 
 const ListBtn = styled(ListItemButton)(({ theme }) => ({
   transition: 'all 0.3s',
+
   '&:hover p, &:hover svg': {
     color: theme.palette.primary.main,
   },
@@ -40,6 +40,7 @@ export const SideMenu: FC = () => {
   const { push } = useRouter();
   const { palette } = useTheme();
   const isTablet = useMediaQuery('(max-width:650px)');
+  const isLaptop = useMediaQuery('(max-width:1280px)');
 
   const [isOpen, setIsOpen] = useState(false);
   const onToggle = () => setIsOpen((o) => !o);
@@ -75,7 +76,7 @@ export const SideMenu: FC = () => {
             {links.map((link, i) => (
               <ListItem key={i} onClick={() => push(i === 0 ? `/` : `/${link}`)} disablePadding>
                 <ListBtn>
-                  <Text>{t(link)}</Text>
+                  <Text sx={{ fontSize: isLaptop ? '24px' : '34px' }}>{t(link)}</Text>
                 </ListBtn>
               </ListItem>
             ))}
@@ -87,7 +88,7 @@ export const SideMenu: FC = () => {
                 <ListItemIcon>
                   <Brightness6Icon sx={iconStyles} />
                 </ListItemIcon>
-                <Text>{t(palette.mode)}</Text>
+                <Text sx={{ fontSize: isLaptop ? '24px' : '34px' }}>{t(palette.mode)}</Text>
               </ListBtn>
             </ListItem>
             <ListItem disablePadding>
@@ -95,7 +96,7 @@ export const SideMenu: FC = () => {
                 <ListItemIcon>
                   <LanguageIcon sx={iconStyles} />
                 </ListItemIcon>
-                <Text>{t('lang')}</Text>
+                <Text sx={{ fontSize: isLaptop ? '24px' : '34px' }}>{t('lang')}</Text>
               </ListBtn>
             </ListItem>
           </List>
