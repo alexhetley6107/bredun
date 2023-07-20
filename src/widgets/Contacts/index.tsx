@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box, IconButton, Stack } from '@mui/material';
-import { Text, Title } from '@/shared/ui';
+import { LinkIcon, Text, Title } from '@/shared/ui';
 import Link from 'next/link';
 import { useTranslate } from '@/shared/hooks';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -13,13 +13,13 @@ import DescriptionIcon from '@mui/icons-material/Description';
 const contactLinks = [
   { icon: <LinkedInIcon />, link: 'https://www.linkedin.com/in/aleksandr-bredun' },
   { icon: <TelegramIcon />, link: 'https://telegram.me/lexhetley' },
-  { icon: <GitHubIcon />, link: 'https://github.com/alexhetley6107' },
   { icon: <LogoDevRoundedIcon />, link: 'https://career.habr.com/al_hetley' },
 ];
 
 const cvs = [
   { icon: <ContactPageIcon />, link: '/' },
   { icon: <DescriptionIcon />, link: '/' },
+  { icon: <GitHubIcon />, link: 'https://github.com/alexhetley6107' },
 ];
 
 export const Contacts: FC = () => {
@@ -38,11 +38,9 @@ export const Contacts: FC = () => {
 
       <Text>{t('contact_by_links')}</Text>
 
-      <Stack direction="row" justifyContent="space-around">
+      <Stack direction="row" justifyContent="center">
         {contactLinks.map(({ icon, link }) => (
-          <Link href={link} target="blank">
-            <IconButton sx={{ color: 'primary.main', '& *': { fontSize: '50px' } }}>{icon}</IconButton>
-          </Link>
+          <LinkIcon key={link} icon={icon} link={link} />
         ))}
       </Stack>
 
@@ -50,14 +48,11 @@ export const Contacts: FC = () => {
 
       <Stack direction="row" justifyContent="center">
         {cvs.map(({ icon, link }) => (
-          <Link href={link} target="blank">
-            <IconButton sx={{ color: 'primary.main', '& *': { fontSize: '50px' } }}>{icon}</IconButton>
-          </Link>
+          <LinkIcon key={link} icon={icon} link={link} />
         ))}
       </Stack>
 
-      {/* //MAP
-       //AVATAR */}
+      {/* Contact Form */}
     </Box>
   );
 };
