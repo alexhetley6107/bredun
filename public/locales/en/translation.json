@@ -10,8 +10,13 @@
   "fe_dev": "FrontEnd Developer",
   "greeting": "Hello, my name is Alex.",
   "about_me": "I'm an experienced Frontend Developer, who is passionate about cutting-edge, pixel-perfect, beautiful interfaces and intuitively implemented UX. I develop web applications in React and not only.",
-  "skills": "",
-  "experience": "",
+  "skills": "My Technology stack",
+  "experience": "My work experience",
+  "siema_dates": "September 2022 - Until now",
+  "siema_work": "Development of web applications on React and Next.js for managing irrigation systems.",
+  "evryka_dates": "March 2022 - August 2022",
+  "evryka_work": "Development of the corporate website of the company, layout and integration with the backend",
+
   "afterwords": "",
 
   "back_to_main": "Back to Main",

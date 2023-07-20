@@ -30,9 +30,33 @@ export const Home: FC = () => {
         </Link>
       </Box>
 
-      <Text>{t('skills')}</Text>
-      <Text>{t('experience')}</Text>
-      <Text>{t('afterwords')}</Text>
+      <Text align="center">{t('skills')}:</Text>
+
+      <Text>TypeScript / JavaScript (ES6+)</Text>
+      <Text>ReactJS / React Native / Next.JS / Feature-Sliced Design</Text>
+      <Text>Redux / Redux Thunk / Zustand / MobX</Text>
+      <Text>Material UI / Ant Design / TailwindCSS / SCSS / CSS Modules</Text>
+      <Text>VSCode / Git / Github, Leaflet</Text>
+
+      <Text align="center">{t('experience')}:</Text>
+
+      <Text align="center" sx={{ mb: 0 }}>
+        Siema – Software Development Outsourcing & Outstaffing Services
+      </Text>
+      <Text align="center" sx={{ m: 0, color: 'primary.main' }}>
+        {t('siema_dates')}
+      </Text>
+      <Text align="center">{t('siema_work')}</Text>
+
+      <Text align="center" sx={{ mb: 0 }}>
+        Evryka - Digital Innovative Technologies
+      </Text>
+      <Text align="center" sx={{ m: 0, color: 'primary.main' }}>
+        {t('evryka_dates')}
+      </Text>
+      <Text align="center">{t('evryka_work')}</Text>
+
+      <Text align="justify">{t('afterwords')}</Text>
     </Box>
   );
 };
