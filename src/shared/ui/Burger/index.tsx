@@ -3,7 +3,7 @@ import { Box, IconButton, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-const iconStyles = { width: '45px', height: '45px', color: 'secondary.light' };
+const iconStyles = { width: '35px', height: '35px', color: 'secondary.light' };
 
 interface Props {
   open: boolean;
@@ -24,8 +24,8 @@ export const Burger: FC<Props> = ({ open, onToggle }) => {
       <IconButton
         onClick={onToggle}
         sx={{
-          width: '60px',
-          height: '60px',
+          width: '50px',
+          height: '50px',
           bgcolor: 'secondary.dark',
           '&:hover': {
             bgcolor: 'primary.main',

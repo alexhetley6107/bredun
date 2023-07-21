@@ -17,7 +17,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import Brightness6Icon from '@mui/icons-material/Brightness6';
 import { useToggleColorMode } from '@/shared/lib';
 import { useTranslate } from '@/shared/hooks';
-import { Burger } from '@/features';
+import { Burger } from '@/shared/ui';
 
 const Text = styled(Typography)(({ theme }) => ({
   fontWeight: 500,

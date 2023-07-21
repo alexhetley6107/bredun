@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Typography, useMediaQuery } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import { Avatar, Text, Title } from '@/shared/ui';
 import Link from 'next/link';
 import { useTranslate } from '@/shared/hooks';
@@ -46,7 +46,7 @@ export const Home: FC = () => {
       <Text align="center" sx={{ m: 0, color: 'primary.main' }}>
         {t('siema_dates')}
       </Text>
-      <Text align="center">{t('siema_work')}</Text>
+      <Text align="justify">{t('siema_work')}</Text>
 
       <Text align="center" sx={{ mb: 0 }}>
         Evryka - Digital Innovative Technologies
@@ -54,7 +54,7 @@ export const Home: FC = () => {
       <Text align="center" sx={{ m: 0, color: 'primary.main' }}>
         {t('evryka_dates')}
       </Text>
-      <Text align="center">{t('evryka_work')}</Text>
+      <Text align="justify">{t('evryka_work')}</Text>
 
       <Text align="justify">{t('afterwords')}</Text>
     </Box>

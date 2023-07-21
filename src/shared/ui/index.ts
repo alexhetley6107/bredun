@@ -3,3 +3,5 @@ export * from './Avatar';
 export * from './Text';
 export * from './Title';
 export * from './LinkIcon';
+export * from './Burger';
+export * from './BackLink';

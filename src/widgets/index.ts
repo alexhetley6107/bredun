@@ -1,4 +1,4 @@
-export * from './Contacts';
+export * from './ContactLinks';
 export * from './Home';
 export * from './Projects';
 export * from './SideMenu';
