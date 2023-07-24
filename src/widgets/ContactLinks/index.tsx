@@ -19,7 +19,7 @@ export const ContactLinks: FC = () => {
 
   return (
     <Box>
-      <NavLink route="/">{'< ' + t('back_to_main')}</NavLink>
+      <NavLink route="/">{'... ' + t('back_to_main')}</NavLink>
 
       <Title>{t('contacts')}</Title>
       <Text>{t('contact_by_links')}</Text>

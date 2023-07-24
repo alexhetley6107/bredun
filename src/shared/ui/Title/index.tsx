@@ -7,8 +7,8 @@ export const Title: FC<TypographyProps> = ({ sx, children, ...props }) => {
   return (
     <Typography
       fontWeight={500}
-      fontSize={isLaptop ? 30 : 50}
-      lineHeight={isLaptop ? '35px' : '50px'}
+      fontSize={isLaptop ? 30 : 40}
+      lineHeight={isLaptop ? '35px' : '45px'}
       sx={{ color: 'primary.main', ...sx }}
       {...props}
     >

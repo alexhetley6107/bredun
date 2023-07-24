@@ -1,11 +1,12 @@
 import React, { FC, useRef } from 'react';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import { useTranslate } from '@/shared/hooks';
 import emailjs from '@emailjs/browser';
+import { Button, Input, Text } from '@/shared/ui';
 
 export const ContactForm: FC = () => {
   const { t } = useTranslate();
-  const form = useRef<HTMLFormElement>();
+  const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: any) => {
     e.preventDefault();
@@ -15,18 +16,18 @@ export const ContactForm: FC = () => {
 
   return (
     <Box>
+      <Text>{t('or_mail')}</Text>
+
       <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="viewer_name" />
-        <label>Email</label>
-        <input type="email" name="viewer_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send" />
+        <Input label={t('name')} type="text" name="viewer_name" />
+
+        <Input label={t('email')} type="email" name="viewer_email" />
+
+        <Input label={t('message')} name="message" big />
+        <Button type="submit" sx={{ my: '20px' }}>
+          {t('send')}
+        </Button>
       </form>
-      <Button>CONTACT</Button>
     </Box>
   );
 };
-
-//  service_7tnhw9c;

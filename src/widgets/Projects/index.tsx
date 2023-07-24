@@ -8,7 +8,7 @@ export const Projects: FC = () => {
 
   return (
     <Box>
-      <NavLink route="/">{'< ' + t('back_to_main')}</NavLink>
+      <NavLink route="/">{'... ' + t('back_to_main')}</NavLink>
 
       <Title>{t('projects')}</Title>
     </Box>

@@ -6,3 +6,4 @@ export * from './LinkIcon';
 export * from './Burger';
 export * from './NavLink';
 export * from './Input';
+export * from './Button';

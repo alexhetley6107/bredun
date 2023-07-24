@@ -12,17 +12,21 @@ export const Home: FC = () => {
     <Box>
       <Avatar />
 
-      <Text align="center" fontWeight={500} fontSize={isLaptop ? 26 : 40} lineHeight={isLaptop ? '30px' : '50px'}>
-        {t('name')}
+      <Text
+        align="center"
+        fontWeight={500}
+        fontSize={isLaptop ? 24 : 35}
+        lineHeight={isLaptop ? '30px' : '45px'}
+        sx={{ mb: 0 }}
+      >
+        {t('hero_name')}
       </Text>
-      <Title align="center" mt="10px">
-        {t('fe_dev')}
-      </Title>
+      <Title align="center">{t('fe_dev')}</Title>
 
       <Text align="center">{t('greeting')}</Text>
       <Text align="justify">{t('about_me')}</Text>
 
-      <NavLink route="/contacts" align="center">
+      <NavLink route="/contacts" align="center" sx={{ my: 0 }}>
         {t('contact_me')}
       </NavLink>
 

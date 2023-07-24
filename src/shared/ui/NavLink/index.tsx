@@ -7,11 +7,17 @@ interface Props extends TypographyProps {
   route: string;
 }
 
-export const NavLink: FC<Props> = ({ route, align, children }) => {
+export const NavLink: FC<Props> = ({ route, align, children, sx }) => {
   return (
     <Box sx={{ a: { textDecoration: 'none' } }}>
       <Link href={route}>
-        <Text align={align ?? 'left'} fontWeight={500} fontSize={20} lineHeight={'50px'} sx={{ color: 'primary.main' }}>
+        <Text
+          align={align ?? 'left'}
+          fontWeight={500}
+          fontSize={20}
+          lineHeight={'30px'}
+          sx={{ color: 'primary.main', my: '10px', ...sx }}
+        >
           {children}
         </Text>
       </Link>
