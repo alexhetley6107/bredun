@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box, Stack } from '@mui/material';
-import { BackLink, LinkIcon, Text, Title } from '@/shared/ui';
+import { LinkIcon, NavLink, Text, Title } from '@/shared/ui';
 import { useTranslate } from '@/shared/hooks';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
@@ -19,7 +19,8 @@ export const ContactLinks: FC = () => {
 
   return (
     <Box>
-      <BackLink />
+      <NavLink route="/">{'< ' + t('back_to_main')}</NavLink>
+
       <Title>{t('contacts')}</Title>
       <Text>{t('contact_by_links')}</Text>
 

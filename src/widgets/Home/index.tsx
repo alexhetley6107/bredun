@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box, useMediaQuery } from '@mui/material';
-import { Avatar, Text, Title } from '@/shared/ui';
+import { Avatar, NavLink, Text, Title } from '@/shared/ui';
 import Link from 'next/link';
 import { useTranslate } from '@/shared/hooks';
 
@@ -22,13 +22,9 @@ export const Home: FC = () => {
       <Text align="center">{t('greeting')}</Text>
       <Text align="justify">{t('about_me')}</Text>
 
-      <Box sx={{ a: { textDecoration: 'none' } }}>
-        <Link href="/contacts">
-          <Text align="center" fontWeight={500} fontSize={20} lineHeight={'30px'} sx={{ color: 'primary.main' }}>
-            {t('contact_me')}
-          </Text>
-        </Link>
-      </Box>
+      <NavLink route="/contacts" align="center">
+        {t('contact_me')}
+      </NavLink>
 
       <Text align="center">{t('skills')}:</Text>
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Box } from '@mui/material';
-import { BackLink, Text, Title } from '@/shared/ui';
+import { NavLink, Text, Title } from '@/shared/ui';
 import { useTranslate } from '@/shared/hooks';
 
 export const Projects: FC = () => {
@@ -8,7 +8,7 @@ export const Projects: FC = () => {
 
   return (
     <Box>
-      <BackLink />
+      <NavLink route="/">{'< ' + t('back_to_main')}</NavLink>
 
       <Title>{t('projects')}</Title>
     </Box>
