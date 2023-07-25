@@ -9,8 +9,15 @@ export const ContactForm: FC = () => {
   const { t } = useTranslate();
   const form = useRef<HTMLFormElement>(null);
 
-  const { messageData, onMessageDataChange, checkIsValid, nameErrorText, emailErrorText, messageErrorText } =
-    useMessageValues();
+  const {
+    messageData,
+    onMessageDataChange,
+    checkIsValid,
+    nameErrorText,
+    emailErrorText,
+    messageErrorText,
+    resetValues,
+  } = useMessageValues();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,14 +25,18 @@ export const ContactForm: FC = () => {
     e.preventDefault();
     if (!checkIsValid()) return;
 
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string;
+
     setIsLoading(true);
 
     try {
-      // await emailjs.sendForm('service_7tnhw9c', 'template_lquqnbc', form.current ?? '', 'uLhxwwX9OTALrJIJu');
-      await emailjs.sendForm('service_7tnhw9c', 'template_lquqnbc', form.current ?? '', 'ddd');
+      await emailjs.sendForm(serviceID, templateID, form.current ?? '', publicKey);
     } catch (error) {
     } finally {
       setIsLoading(false);
+      resetValues();
     }
   };
 

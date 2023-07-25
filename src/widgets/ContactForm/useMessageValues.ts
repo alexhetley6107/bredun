@@ -55,6 +55,13 @@ export const useMessageValues = () => {
     return isValid;
   };
 
+  const resetValues = () => {
+    setMessageData({ name: '', email: '', message: '' });
+    setIsNoChangeName(true);
+    setIsNoChangeEmail(true);
+    setIsNoChangeMessage(true);
+  };
+
   useEffect(() => {
     if (!isNoChangeName && !isNoChangeEmail && !isNoChangeMessage) {
       checkIsValid();
@@ -68,5 +75,6 @@ export const useMessageValues = () => {
     nameErrorText,
     emailErrorText,
     messageErrorText,
+    resetValues,
   };
 };
