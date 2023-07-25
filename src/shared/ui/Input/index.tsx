@@ -42,7 +42,7 @@ export const Input: React.FC<Props> = ({
 
   return (
     <Box sx={{ width: '100%', ...props.sx }}>
-      <Text noWrap sx={{ color: 'secondary.dark', my: '3px', ml: '20px' }}>
+      <Text noWrap sx={{ color: 'secondary.dark', mt: '10px', mb: '2px', ml: '15px' }}>
         {label}
       </Text>
       <TextField
@@ -53,15 +53,18 @@ export const Input: React.FC<Props> = ({
         sx={{
           '& .MuiInputBase-root': {
             borderRadius: '10px',
-            border: `2px solid ${palette.primary.main}`,
-            pl: '10px',
+            border: `2px solid ${error ? '#c9473f' : palette.primary.main}`,
+
+            pl: '15px',
             pr: isLoading ? '10px' : '20px',
           },
           '& .MuiFormHelperText-root': {
             lineHeight: 1,
             position: 'absolute',
             bottom: '-16px',
+            right: 0,
             color: '#c9473f',
+            fontWeight: 500,
           },
           '& .Mui-focused': {
             borderWidth: '2px !important',
