@@ -1,8 +1,11 @@
+import { useTranslate } from '@/shared/hooks';
 import { ChangeEvent, useEffect, useState } from 'react';
 
 const emailRegexp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 export const useMessageValues = () => {
+  const { t } = useTranslate();
+
   const [messageData, setMessageData] = useState({
     name: '',
     email: '',
@@ -32,20 +35,20 @@ export const useMessageValues = () => {
     let isValid = true;
 
     if (!messageData.name) {
-      setNameErrorText('Please enter user name');
+      setNameErrorText(t('name_err'));
       isValid = false;
     }
 
     if (!messageData.message) {
-      setMessageErrorText('Please enter your message');
+      setMessageErrorText(t('message_err'));
       isValid = false;
     }
 
     if (!messageData.email) {
-      setEmailErrorText('Please enter your email');
+      setEmailErrorText(t('email_err_1'));
       isValid = false;
     } else if (!emailRegexp.test(messageData.email)) {
-      setEmailErrorText('Invalid email address');
+      setEmailErrorText(t('email_err_2'));
       isValid = false;
     }
 

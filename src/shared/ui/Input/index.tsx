@@ -1,24 +1,14 @@
-import React from 'react';
-import { TextField, TextFieldProps, useTheme, Typography, Box, InputAdornment, CircularProgress } from '@mui/material';
+import React, { FC } from 'react';
+import { TextField, TextFieldProps, useTheme, Box } from '@mui/material';
 import { Text } from '../Text';
 
 type Props = TextFieldProps & {
   label: string;
   big?: boolean;
   helperText?: string;
-  isLoading?: boolean;
 };
 
-export const Input: React.FC<Props> = ({
-  label,
-  big,
-  disabled,
-  placeholder,
-  error,
-  helperText,
-  isLoading,
-  ...props
-}) => {
+export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, helperText, ...props }) => {
   const { palette } = useTheme();
 
   const autoFillColor = {
@@ -56,7 +46,7 @@ export const Input: React.FC<Props> = ({
             border: `2px solid ${error ? '#c9473f' : palette.primary.main}`,
 
             pl: '15px',
-            pr: isLoading ? '10px' : '20px',
+            pr: '20px',
           },
           '& .MuiFormHelperText-root': {
             lineHeight: 1,

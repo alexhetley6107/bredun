@@ -17,7 +17,7 @@ export const Home: FC = () => {
         fontWeight={500}
         fontSize={isLaptop ? 24 : 35}
         lineHeight={isLaptop ? '30px' : '45px'}
-        sx={{ mb: 0 }}
+        sx={{ mb: 0, color: 'primary.main' }}
       >
         {t('hero_name')}
       </Text>

@@ -27,5 +27,9 @@
   "name": "Name",
   "email": "Mail",
   "message": "Message",
+  "name_err": "Please enter user name",
+  "email_err_1": "Please enter your email",
+  "email_err_2": "Invalid email address",
+  "message_err": "Please enter your message",
   "send": "Send"
 }

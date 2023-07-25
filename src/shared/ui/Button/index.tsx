@@ -15,16 +15,16 @@ export const Button: React.FC<Props> = ({ loading, disabled, children, onClick, 
       sx={{
         boxSizing: 'border-box',
         position: 'relative',
-        bgcolor: 'primary.main',
+        bgcolor: 'secondary.dark',
         borderRadius: '10px',
         textTransform: 'uppercase',
-        height: '100%',
+        height: '45px',
         color: 'secondary.light',
         fontSize: '18px',
         whiteSpace: 'nowrap',
         px: '15px',
         '&:hover': {
-          bgcolor: 'primary.main',
+          bgcolor: 'secondary.dark',
         },
         '&:disabled': {
           color: disabled ? 'info.light' : 'info.main',
@@ -32,7 +32,7 @@ export const Button: React.FC<Props> = ({ loading, disabled, children, onClick, 
         ...sx,
       }}
     >
-      {loading ? <CircularProgress size={20} sx={{ color: 'info.main' }} /> : children}
+      {loading ? <CircularProgress size={30} sx={{ color: 'secondary.light' }} /> : children}
     </MuiButton>
   );
 };

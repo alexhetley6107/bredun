@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import { useTranslate } from '@/shared/hooks';
 import emailjs from '@emailjs/browser';
@@ -12,11 +12,21 @@ export const ContactForm: FC = () => {
   const { messageData, onMessageDataChange, checkIsValid, nameErrorText, emailErrorText, messageErrorText } =
     useMessageValues();
 
-  const sendEmail = (e: any) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const sendEmail = async (e: any) => {
     e.preventDefault();
     if (!checkIsValid()) return;
 
-    emailjs.sendForm('service_7tnhw9c', 'template_lquqnbc', form.current ?? '', 'uLhxwwX9OTALrJIJu');
+    setIsLoading(true);
+
+    try {
+      // await emailjs.sendForm('service_7tnhw9c', 'template_lquqnbc', form.current ?? '', 'uLhxwwX9OTALrJIJu');
+      await emailjs.sendForm('service_7tnhw9c', 'template_lquqnbc', form.current ?? '', 'ddd');
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -51,7 +61,7 @@ export const ContactForm: FC = () => {
           helperText={messageErrorText}
         />
 
-        <Button type="submit" sx={{ my: '25px' }}>
+        <Button type="submit" sx={{ my: '25px' }} loading={isLoading}>
           {t('send')}
         </Button>
       </form>

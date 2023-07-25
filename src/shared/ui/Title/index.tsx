@@ -9,7 +9,7 @@ export const Title: FC<TypographyProps> = ({ sx, children, ...props }) => {
       fontWeight={500}
       fontSize={isLaptop ? 30 : 40}
       lineHeight={isLaptop ? '35px' : '45px'}
-      sx={{ color: 'primary.main', ...sx }}
+      sx={{ color: 'secondary.dark', ...sx }}
       {...props}
     >
       {children}
