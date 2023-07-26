@@ -7,3 +7,4 @@ export * from './Burger';
 export * from './NavLink';
 export * from './Input';
 export * from './Button';
+export * from './Snackbar';

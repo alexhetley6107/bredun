@@ -2,7 +2,7 @@ import React, { FC, useRef, useState } from 'react';
 import { Box } from '@mui/material';
 import { useTranslate } from '@/shared/hooks';
 import emailjs from '@emailjs/browser';
-import { Button, Input, Text } from '@/shared/ui';
+import { Button, Input, Snackbar, Text } from '@/shared/ui';
 import { useMessageValues } from './useMessageValues';
 
 export const ContactForm: FC = () => {
@@ -20,6 +20,7 @@ export const ContactForm: FC = () => {
   } = useMessageValues();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -34,11 +35,15 @@ export const ContactForm: FC = () => {
     try {
       await emailjs.sendForm(serviceID, templateID, form.current ?? '', publicKey);
     } catch (error) {
+      console.log(error);
+      setIsError(true);
     } finally {
       setIsLoading(false);
       resetValues();
     }
   };
+
+  const handleClose = () => setIsError(false);
 
   return (
     <Box>
@@ -76,6 +81,8 @@ export const ContactForm: FC = () => {
           {t('send')}
         </Button>
       </form>
+
+      <Snackbar open={isError} onClose={handleClose} message={t('snack_err')} />
     </Box>
   );
 };

@@ -47,6 +47,9 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                   dark: 'rgba(10, 10, 10, 1)',
                   light: 'rgba(255, 255, 255, 1)',
                 },
+                error: {
+                  main: '#c9473f',
+                },
               }
             : {
                 primary: {
@@ -56,6 +59,9 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
                   main: 'rgba(62, 62, 62, 1)',
                   dark: 'rgba(255, 255, 255, 1)',
                   light: 'rgba(10, 10, 10, 1)',
+                },
+                error: {
+                  main: '#c9473f',
                 },
               }),
         },

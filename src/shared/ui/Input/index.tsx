@@ -43,7 +43,7 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
         sx={{
           '& .MuiInputBase-root': {
             borderRadius: '10px',
-            border: `2px solid ${error ? '#c9473f' : palette.primary.main}`,
+            border: `2px solid ${error ? palette.error.main : palette.primary.main}`,
 
             pl: '15px',
             pr: '20px',
@@ -53,7 +53,7 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
             position: 'absolute',
             bottom: '-16px',
             right: 0,
-            color: '#c9473f',
+            color: palette.error.main,
             fontWeight: 500,
           },
           '& .Mui-focused': {

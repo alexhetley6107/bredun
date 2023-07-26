@@ -32,11 +32,19 @@ export const Home: FC = () => {
 
       <Text align="center">{t('skills')}:</Text>
 
-      <Text>TypeScript / JavaScript (ES6+)</Text>
-      <Text>ReactJS / React Native / Next.JS / Feature-Sliced Design</Text>
-      <Text>Redux / Redux Thunk / Zustand / MobX</Text>
-      <Text>Material UI / Ant Design / TailwindCSS / SCSS / CSS Modules</Text>
-      <Text>VSCode / Git / Github, Leaflet</Text>
+      <Text> - TypeScript / JavaScript (ES6+)</Text>
+      <Text> - NextJS / ReactJS / React Native</Text>
+      <Text> - Redux Toolkit / Redux / Redux Thunk / Zustand</Text>
+      <Text> - React Hook Form / Formik / Leaflet</Text>
+      <Text> - SCSS / styled-components / CSS Modules </Text>
+      <Text> - Material UI / Ant Design</Text>
+      <Text> - React Testing Library / Jest </Text>
+      <Text> - ESLint / Prettier</Text>
+      <Text> - NestJS / Express</Text>
+      <Text> - PostreSQL / MongoDB</Text>
+      <Text> - JWT / PassportJS</Text>
+      <Text> - GraphQL (Apollo) / RESTApi / Swagger</Text>
+      <Text> - WebSocket / WebRTC / Socket.io</Text>
 
       <Text align="center">{t('experience')}:</Text>
 

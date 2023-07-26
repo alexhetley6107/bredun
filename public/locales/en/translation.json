@@ -31,5 +31,6 @@
   "email_err_1": "Please enter your email",
   "email_err_2": "Invalid email address",
   "message_err": "Please enter your message",
-  "send": "Send"
+  "send": "Send",
+  "snack_err": "Oops, Something went wrong!"
 }
