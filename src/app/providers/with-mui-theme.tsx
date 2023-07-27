@@ -41,6 +41,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
             ? {
                 primary: {
                   main: 'rgba(52, 112, 255, 1)',
+                  dark: 'rgba(52, 112, 255, 1)',
                 },
                 secondary: {
                   main: 'rgba(62, 62, 62, 1)',
@@ -54,6 +55,7 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
             : {
                 primary: {
                   main: 'rgba(92, 177, 255, 1)',
+                  dark: 'rgba(52, 112, 255, 1)',
                 },
                 secondary: {
                   main: 'rgba(62, 62, 62, 1)',

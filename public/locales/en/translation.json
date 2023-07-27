@@ -35,5 +35,8 @@
   "snack_err": "Oops, Something went wrong!",
 
   "in_development": "In development",
-  "blog": "Blog"
+  "blog": "Blog",
+
+  "engee_desc": "App for learning foreign words. There are modes of memorization, testing and replenishment of the database of words. (TypeScript, ReactJS, ReduxJS/Toolkit, NodeJS, Express, MongoDB).",
+  "pizza_desc": "Online store for ordering delicious pizza ( TypeScript, ReactJS, ReduxJS/Toolkit, MockApi)."
 }

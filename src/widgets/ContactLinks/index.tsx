@@ -24,7 +24,7 @@ export const ContactLinks: FC = () => {
       <Title>{t('contacts')}</Title>
       <Text>{t('contact_by_links')}</Text>
 
-      <Stack direction="row" justifyContent="space-around">
+      <Stack direction="row" justifyContent="space-between">
         {contactLinks.map(({ icon, link }) => (
           <LinkIcon key={link} icon={icon} link={link} />
         ))}

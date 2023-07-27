@@ -34,5 +34,8 @@
   "snack_err": "Ой, что-то пошло не так!",
 
   "in_development": "В разработке",
-  "blog": "Блог"
+  "blog": "Блог",
+
+  "engee_desc": "Приложение для изучения иностранных слов. Есть режимы запоминания, тестирование и пополнения базы слов. (TypeScript, ReactJS, ReduxJS/Toolkit, NodeJS, Express, MongoDB).",
+  "pizza_desc": "Интернет-магазин для заказа вкуснейшей пиццы ( TypeScript, ReactJS, ReduxJS/Toolkit, MockApi)."
 }
