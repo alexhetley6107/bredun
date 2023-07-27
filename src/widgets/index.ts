@@ -3,3 +3,4 @@ export * from './Home';
 export * from './Projects';
 export * from './SideMenu';
 export * from './ContactForm';
+export * from './Blog';

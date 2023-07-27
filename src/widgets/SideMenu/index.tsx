@@ -32,7 +32,7 @@ const ListBtn = styled(ListItemButton)(({ theme }) => ({
   },
 }));
 
-const links = ['main', 'projects', 'contacts'];
+const links = ['main', 'projects', 'blog', 'contacts'];
 const iconStyles = { mt: '5px', width: '35px', height: '35px', color: 'secondary.dark' };
 
 export const SideMenu: FC = () => {
