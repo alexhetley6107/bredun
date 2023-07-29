@@ -20,7 +20,7 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
         },
       }}
     >
-      <Container maxWidth="sm" disableGutters sx={{ px: '20px' }}>
+      <Container maxWidth="sm" disableGutters sx={{ px: '20px', mb: '100px' }}>
         {children}
       </Container>
     </Box>

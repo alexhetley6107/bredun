@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Box, useMediaQuery } from '@mui/material';
 import { Avatar, NavLink, Text, Title } from '@/shared/ui';
-import Link from 'next/link';
 import { useTranslate } from '@/shared/hooks';
 
 export const Home: FC = () => {
@@ -33,7 +32,7 @@ export const Home: FC = () => {
       <Text align="center">{t('skills')}:</Text>
 
       <Text> - TypeScript / JavaScript (ES6+)</Text>
-      <Text> - NextJS / ReactJS / React Native</Text>
+      <Text> - NextJS / ReactJS / React Native / Angular</Text>
       <Text> - Redux Toolkit / Redux / Redux Thunk / Zustand</Text>
       <Text> - React Hook Form / Formik / Leaflet</Text>
       <Text> - SCSS / styled-components / CSS Modules </Text>
@@ -64,7 +63,20 @@ export const Home: FC = () => {
       </Text>
       <Text align="justify">{t('evryka_work')}</Text>
 
-      <Text align="justify">{t('afterwords')}</Text>
+      <Text align="center">{t('and_also')}</Text>
+
+      <Text align="justify">{t('exp_1')}</Text>
+      <Text align="justify">{t('exp_2')}</Text>
+      <Text align="justify">{t('exp_3')}</Text>
+      <Text align="justify">{t('exp_4')}</Text>
+      <Text align="justify">{t('exp_5')}</Text>
+      <Text align="justify">{t('exp_6')}</Text>
+      <Text align="justify">{t('exp_7')}</Text>
+      <Text align="justify">{t('exp_8')}</Text>
+
+      <NavLink route="/contacts" align="center" sx={{ my: 0 }}>
+        {t('contact_me')}
+      </NavLink>
     </Box>
   );
 };

@@ -27,6 +27,8 @@ export const Burger: FC<Props> = ({ open, onToggle }) => {
           width: '50px',
           height: '50px',
           bgcolor: 'secondary.dark',
+          border: '1px solid white',
+          borderColor: 'secondary.light',
           '&:hover': {
             bgcolor: 'primary.main',
           },
