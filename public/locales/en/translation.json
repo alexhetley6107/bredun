@@ -33,6 +33,7 @@
   "message_err": "Please enter your message",
   "send": "Send",
   "snack_err": "Oops, Something went wrong!",
+  "successfully_sent": "Successfully sent",
 
   "in_development": "In development",
   "blog": "Blog",

@@ -17,12 +17,9 @@ export const ProjectItem: FC<ProjectType> = ({ img, title, description, link }) 
             height: '150px',
             bgcolor: 'lightgreen',
             borderRadius: '25px',
-            position: 'relative',
-            overflow: 'hidden',
+            background: `url(${img}) center / cover no-repeat`,
           }}
-        >
-          <Box component="img" src={img} width={'object-fit'} />
-        </Stack>
+        />
       </Link>
 
       <Text align="justify" sx={{ mt: '5px', mx: '10px' }}>

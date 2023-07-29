@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import { Snackbar as MuiSnackbar, SnackbarProps } from '@mui/material';
 
-export const Snackbar: FC<SnackbarProps> = ({ open, onClose, message }) => {
+interface Props extends SnackbarProps {
+  error?: boolean;
+}
+
+export const Snackbar: FC<Props> = ({ open, onClose, message, error }) => {
   return (
     <MuiSnackbar
       anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -11,7 +15,7 @@ export const Snackbar: FC<SnackbarProps> = ({ open, onClose, message }) => {
       sx={{
         '& .MuiPaper-root': {
           borderRadius: '10px',
-          bgcolor: 'error.main',
+          bgcolor: error ? 'error.main' : 'primary.main',
           color: 'white',
           fontWeight: 600,
         },

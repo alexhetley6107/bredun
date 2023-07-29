@@ -21,6 +21,7 @@ export const ContactForm: FC = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const sendEmail = async (e: any) => {
     e.preventDefault();
@@ -34,16 +35,20 @@ export const ContactForm: FC = () => {
 
     try {
       await emailjs.sendForm(serviceID, templateID, form.current ?? '', publicKey);
+      setIsSuccess(true);
+      resetValues();
     } catch (error) {
       console.log(error);
       setIsError(true);
     } finally {
       setIsLoading(false);
-      resetValues();
     }
   };
 
-  const handleClose = () => setIsError(false);
+  const handleClose = () => {
+    setIsError(false);
+    setIsSuccess(false);
+  };
 
   return (
     <Box>
@@ -82,7 +87,8 @@ export const ContactForm: FC = () => {
         </Button>
       </form>
 
-      <Snackbar open={isError} onClose={handleClose} message={t('snack_err')} />
+      <Snackbar open={isError} error onClose={handleClose} message={t('snack_err')} />
+      <Snackbar open={isSuccess} onClose={handleClose} message={t('successfully_sent')} />
     </Box>
   );
 };
