@@ -10,9 +10,10 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
         overflowX: 'hidden',
         bgcolor: 'secondary.light',
         '&::-webkit-scrollbar-thumb': {
+          borderWidth: { xs: '3px', md: `5px` },
+          borderStyle: 'solid',
+          borderColor: 'secondary.light',
           backgroundColor: 'secondary.dark',
-          border: { xs: '3px solid white', md: `5px solid white` },
-          borderColor: `secondary.light`,
           borderRadius: '30px',
         },
         '&::-webkit-scrollbar': {
