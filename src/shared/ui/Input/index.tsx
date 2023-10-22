@@ -32,13 +32,13 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
 
   return (
     <Box sx={{ width: '100%', ...props.sx }}>
-      <Text noWrap sx={{ color: 'secondary.dark', mt: '10px', mb: '2px', ml: '15px' }}>
+      <Text noWrap sx={{ color: 'secondary.dark', my: 0, mt: '10px', mb: '2px', ml: '15px' }}>
         {label}
       </Text>
       <TextField
         fullWidth
         multiline={big ? true : false}
-        minRows={6}
+        minRows={3}
         helperText={error ? helperText : ''}
         sx={{
           '& .MuiInputBase-root': {
@@ -56,6 +56,7 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
             color: palette.error.main,
             fontWeight: 500,
           },
+          '& .MuiOutlinedInput-root': { py: 0.5 },
           '& .Mui-focused': {
             borderWidth: '2px !important',
           },
@@ -67,7 +68,7 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
             color: 'secondary.dark',
             fontSize: '16px',
             fontWeight: 500,
-            lineHeight: '16px',
+            lineHeight: '20px',
             py: 0,
             px: 0,
             width: '100%',
@@ -79,8 +80,10 @@ export const Input: FC<Props> = ({ label, big, disabled, placeholder, error, hel
               lineHeight: '16px',
               fontFamily: 'Myriad Pro',
             },
+
             ...autoFillColor,
           },
+
           fieldset: {
             border: 'none !important',
           },

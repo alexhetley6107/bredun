@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
-import { Typography, TypographyProps, useMediaQuery } from '@mui/material';
+import { Typography, TypographyProps } from '@mui/material';
 
 export const Title: FC<TypographyProps> = ({ sx, children, ...props }) => {
-  const isLaptop = useMediaQuery('(max-width:1280px)');
-
   return (
     <Typography
       fontWeight={500}
-      fontSize={isLaptop ? 30 : 40}
-      lineHeight={isLaptop ? '35px' : '45px'}
-      sx={{ color: 'secondary.dark', ...sx }}
+      fontSize={{ xs: 30, xl: 40 }}
+      lineHeight={{ xs: '35px', xl: '45px' }}
+      sx={{ color: 'secondary.dark', transition: 'all 0.3s', ...sx }}
       {...props}
     >
       {children}

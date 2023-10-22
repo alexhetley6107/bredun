@@ -1,21 +1,19 @@
 import React, { FC } from 'react';
-import { Box, useMediaQuery } from '@mui/material';
+import { Box } from '@mui/material';
 import { Avatar, NavLink, Text, Title } from '@/shared/ui';
 import { useTranslate } from '@/shared/hooks';
 
 export const Home: FC = () => {
   const { t } = useTranslate();
-  const isLaptop = useMediaQuery('(max-width:1280px)');
 
   return (
-    <Box>
+    <Box pb={3}>
       <Avatar />
 
       <Text
         align="center"
-        fontWeight={500}
-        fontSize={isLaptop ? 24 : 35}
-        lineHeight={isLaptop ? '30px' : '45px'}
+        fontSize={{ xs: 24, md: 35 }}
+        lineHeight={{ xs: '30px', md: '45px' }}
         sx={{ mb: 0, color: 'primary.main' }}
       >
         {t('hero_name')}

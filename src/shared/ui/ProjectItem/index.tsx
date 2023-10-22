@@ -14,7 +14,7 @@ export const ProjectItem: FC<ProjectType> = ({ img, title, description, link }) 
       <Link href={link} target="blank">
         <Stack
           sx={{
-            height: '170px',
+            height: '190px',
             bgcolor: 'lightgreen',
             background: `url(${img}) center / cover no-repeat`,
             borderRadius: '15px',
