@@ -23,7 +23,10 @@ export const Home: FC = () => {
       <Text align="center">{t('greeting')}</Text>
       <Text align="justify">{t('about_me')}</Text>
 
-      <NavLink route="/contacts" align="center" sx={{ my: 0 }}>
+      <NavLink route="/projects" align="center" sx={{ my: 0 }}>
+        {t('view_portfolio')}
+      </NavLink>
+      <NavLink route="/contacts" align="center" sx={{ my: 1 }}>
         {t('contact_me')}
       </NavLink>
 
