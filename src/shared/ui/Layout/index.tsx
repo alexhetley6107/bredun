@@ -1,7 +1,11 @@
 import { Box, Container } from '@mui/material';
 import React, { FC, PropsWithChildren } from 'react';
 
-export const Layout: FC<PropsWithChildren> = ({ children }) => {
+interface Props extends PropsWithChildren {
+  animatedScrollProgress?: boolean;
+}
+
+export const Layout: FC<Props> = ({ children, animatedScrollProgress }) => {
   return (
     <Box
       sx={{
@@ -17,10 +21,36 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
           borderRadius: '30px',
         },
         '&::-webkit-scrollbar': {
+          mt: '100px',
           width: { xs: '8px', md: '16px' },
+        },
+
+        scrollTimelineName: animatedScrollProgress ? '--progressTimeline' : '',
+
+        '@keyframes scrollAnimation': {
+          from: {
+            width: '0%',
+          },
+          to: {
+            width: 'calc(100% - 4px)',
+          },
         },
       }}
     >
+      <Box
+        sx={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '2px',
+          width: '100%',
+          bgcolor: 'secondary.dark',
+          m: '1px 2px',
+
+          animationName: 'scrollAnimation',
+          animationTimeline: '--progressTimeline',
+        }}
+      />
       <Container maxWidth="sm" disableGutters sx={{ px: '20px', mb: '10px' }}>
         {children}
       </Container>
