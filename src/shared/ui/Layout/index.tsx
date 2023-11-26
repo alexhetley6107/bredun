@@ -42,10 +42,11 @@ export const Layout: FC<Props> = ({ children, animatedScrollProgress }) => {
           position: 'fixed',
           top: 0,
           left: 0,
-          height: '2px',
           width: '100%',
           bgcolor: 'secondary.dark',
-          m: '1px 2px',
+          mx: '2px',
+          height: { xs: '3px', sm: '2px' },
+          mt: { xs: '2px', sm: '1px' },
 
           animationName: 'scrollAnimation',
           animationTimeline: '--progressTimeline',
