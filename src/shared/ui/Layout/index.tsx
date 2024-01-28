@@ -24,7 +24,6 @@ export const Layout: FC<Props> = ({ children, animatedScrollProgress }) => {
           mt: '100px',
           width: { xs: '8px', md: '16px' },
         },
-
         scrollTimelineName: animatedScrollProgress ? '--progressTimeline' : '',
 
         '@keyframes scrollAnimation': {
@@ -37,21 +36,22 @@ export const Layout: FC<Props> = ({ children, animatedScrollProgress }) => {
         },
       }}
     >
-      <Box
-        sx={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          bgcolor: 'secondary.dark',
-          mx: '2px',
-          height: { xs: '3px', sm: '2px' },
-          mt: { xs: '2px', sm: '1px' },
-
-          animationName: 'scrollAnimation',
-          animationTimeline: '--progressTimeline',
-        }}
-      />
+      {animatedScrollProgress && (
+        <Box
+          sx={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            bgcolor: 'secondary.dark',
+            mx: '2px',
+            height: { xs: '1px', sm: '2px' },
+            mt: { xs: '2px', sm: '1px' },
+            animationName: 'scrollAnimation',
+            animationTimeline: '--progressTimeline',
+          }}
+        />
+      )}
       <Container maxWidth="sm" disableGutters sx={{ px: '20px', mb: '10px' }}>
         {children}
       </Container>
